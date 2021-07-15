@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbandere <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 14:56:27 by sbandere          #+#    #+#             */
-/*   Updated: 2021/07/14 16:25:04 by sbandere         ###   ########.fr       */
+/*   Created: 2021/07/14 16:26:21 by sbandere          #+#    #+#             */
+/*   Updated: 2021/07/14 19:27:53 by sbandere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_str_is_alpha(char *str)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && src[i])
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		if ((str[i] < 'A') || (str[i] > 'Z' && str[i] < 'a') || (str[i] > 'z'))
+			return (0);
 		i++;
 	}
-	while (i < n)
-		dest[i++] = 0;
-	return (dest);
+	return (1);
 }
