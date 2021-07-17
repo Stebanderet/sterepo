@@ -17,9 +17,9 @@ int  main(int argc, char **argv)  // **argv  contient les arguments du programme
 		printf("Error\n"); // si il y a 0 arguments, ou plus d'un arguments, on dit ERREUR
 		return (0);
 	}
-	if (input_check(argv[1]) == 1) 	// on donne la chaine de  "1 3 2 4..." a la fonction input_check ( ecrite plus bas ) pour verifier que il y a que 16 nombres entre 1 et 4
+	if (input_check(argv[1]) == 1) 	// on donne la chaine de  "1 3 2 4..." a la fonction input_check ( fichier ) pour verifier que il y a que 16 nombres entre 1 et 4
 	{
-	 solver(input_to_str(argv[1])); // la on donne la chaine de "142313..." a la fonction solver ( dans le fichier solver.c )  pour resoudre le carre
+	printf("%s", solver(input_to_str(argv[1]))); // la on donne la chaine de "142313..." a la fonction solver ( dans le fichier solver.c )  pour resoudre le carre
 
 	}
 	else

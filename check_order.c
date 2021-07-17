@@ -41,3 +41,13 @@ char*    input_to_str(char *str) //fonction qui transforme la chaine "2 4 1 3 1 
     }
     return (input);
 }
+
+//int	check_colandrow(char *str)  // str[0] - str[3] =  colup
+//{
+
+
+
+
+
+
+//}
