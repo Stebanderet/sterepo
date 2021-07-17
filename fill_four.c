@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 char	*fill_four_col_up(char *str, char *rules);
 char	*fill_four_col_down(char *str, char *rules);
@@ -7,27 +8,17 @@ char	*fill_four_row_right(char *str, char *rules);
 
 char    *fill_four(char *str, char *rules)
 {
-    int    i;
-    int    j;
+	char	*str1;
+	char	*str2;
+	char	*str3;
+	char	*str4;
+	str1 = fill_four_col_up(str, rules);
+	str2 = fill_four_col_down(str, rules);
+	str3 = fill_four_row_left(str, rules);
+	str4 = fill_four_row_right(str, rules);
 
-    i = 0;
-    j = 0;
-
-    while (i < 4)
-    {
-        if (rules[i] == '4')
-        {
-            str[j] = '1';
-            str[j + 8] = '2';
-            str[j + 16] = '3';
-            str[j + 24] = '4';
-        }
-        i++;
-        j = j + 2;
-    }
-    return (str);
+	return (str4);
 }
-
 char    *fill_four_col_up(char *str, char *rules)
 {
     int    i;
@@ -49,7 +40,7 @@ char    *fill_four_col_up(char *str, char *rules)
         j = j + 2;
     }
     return (str);
-
+}
 char    *fill_four_col_down(char *str, char *rules)
 {
     int    i;
@@ -71,7 +62,7 @@ char    *fill_four_col_down(char *str, char *rules)
         j = j + 2;
     }
     return (str);
-
+}
 char    *fill_four_row_left(char *str, char *rules)
 {
     int    i;
@@ -93,8 +84,8 @@ char    *fill_four_row_left(char *str, char *rules)
         j = j + 8;
     }
     return (str);
-
-char    *fill_row_right(char *str, char *rules)
+}
+char    *fill_four_row_right(char *str, char *rules)
 {
     int    i;
     int    j;
@@ -115,3 +106,4 @@ char    *fill_row_right(char *str, char *rules)
         j = j + 8;
     }
     return (str);
+}
