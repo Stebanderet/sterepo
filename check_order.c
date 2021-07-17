@@ -42,6 +42,7 @@ char*    input_to_str(char *str) //fonction qui transforme la chaine "2 4 1 3 1 
     return (input);
 }
 
+<<<<<<< HEAD
 int	check_row_col(char *str)
 {
 	if (str[0] == 1 && str[4] == 1 || str[0] == 2 && str[4] == 4)
@@ -70,3 +71,14 @@ int	check_row_col(char *str)
 			|| str[11] == 4 && str[15] == 4)
 		return (0);
 }
+=======
+//int	check_colandrow(char *str)  // str[0] - str[3] =  colup
+//{
+
+
+
+
+
+
+//}
+>>>>>>> b1ef5f4b4d1953f7ece20faebc2fb4e15758fe2c
