@@ -1,9 +1,9 @@
 #include <stdlib.h>
 
-char	*fill_four_col_up(char *str, char *rules)
-char	*fill_four_col_down(char *str, char *rules)
-char	*fill_four_row_left(char *str, char *rules)
-char	*fill_four_row_right(char *str, char *rules)
+char	*fill_four_col_up(char *str, char *rules);
+char	*fill_four_col_down(char *str, char *rules);
+char	*fill_four_row_left(char *str, char *rules);
+char	*fill_four_row_right(char *str, char *rules);
 
 char    *fill_four(char *str, char *rules)
 {
@@ -94,24 +94,24 @@ char    *fill_four_row_left(char *str, char *rules)
     }
     return (str);
 
-char    *fill_four(char *str, char *rules)
+char    *fill_row_right(char *str, char *rules)
 {
     int    i;
     int    j;
 
-    i = 0;
-    j = 0;
+    i = 12;
+    j = 6;
 
-    while (i < 4)
+    while (i < 16)
     {
         if (rules[i] == '4')
         {
             str[j] = '1';
-            str[j + 8] = '2';
-            str[j + 16] = '3';
-            str[j + 24] = '4';
+            str[j - 2] = '2';
+            str[j - 4] = '3';
+            str[j - 6] = '4';
         }
         i++;
-        j = j + 2;
+        j = j + 8;
     }
     return (str);
