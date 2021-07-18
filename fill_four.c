@@ -6,7 +6,7 @@
 /*   By: sbandere <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 11:19:59 by sbandere          #+#    #+#             */
-/*   Updated: 2021/07/18 11:27:11 by sbandere         ###   ########.fr       */
+/*   Updated: 2021/07/18 11:31:04 by sbandere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -23,13 +23,14 @@ char	*fill_four(char *str, char *rules)
 	char	*str2;
 	char	*str3;
 	char	*str4;
-	
+
 	str1 = fill_four_col_up(str, rules);
 	str2 = fill_four_col_down(str, rules);
 	str3 = fill_four_row_left(str, rules);
 	str4 = fill_four_row_right(str, rules);
 	return (str4);
 }
+
 char	*fill_four_col_up(char *str, char *rules)
 {
 	int	i;
@@ -51,6 +52,7 @@ char	*fill_four_col_up(char *str, char *rules)
 	}
 	return (str);
 }
+
 char	*fill_four_col_down(char *str, char *rules)
 {
 	int	i;
@@ -72,6 +74,7 @@ char	*fill_four_col_down(char *str, char *rules)
 	}
 	return (str);
 }
+
 char	*fill_four_row_left(char *str, char *rules)
 {
 	int	i;
@@ -93,6 +96,7 @@ char	*fill_four_row_left(char *str, char *rules)
 	}
 	return (str);
 }
+
 char	*fill_four_row_right(char *str, char *rules)
 {
 	int	i;
