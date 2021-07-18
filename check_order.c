@@ -1,51 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int    input_check(char *str);
-char*    input_to_str(char *str);
-char*    solver(char *str);
+int		input_check(char *str);
+char	*input_to_str(char *str);
+char	*solver(char *str);
 
-
-int    input_check(char *str) // fonction pour verifier que on a bien 16 nombre entre 1 et 4
+int	input_check(char *str) // fonction pour verifier que on a bien 16 nombre entre 1 et 4
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (str[i] != 0)
-    {
-        if (str[i] < 49 || str[i] > 52)
-            return (0);
-        i++;
-        if (str[i] == 0 && i == 31)
-            return (1);
-        if (str[i] != 32)
-            return (0);
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (str[i] != 0)
+	{
+		if (str[i] < 49 || str[i] > 52)
+			return (0);
+		i++;
+		if (str[i] == 0 && i == 31)
+			return (1);
+		if (str[i] != 32)
+			return (0);
+		i++;
+	}
+	return (0);
 }
 
-char*    input_to_str(char *str) //fonction qui transforme la chaine "2 4 1 3 1 4.." en une chaine "241314.."
+char	*input_to_str(char *str) //fonction qui transforme la chaine "2 4 1 3 1 4.." en une chaine "241314.."
 {
-    int i;
-    int j;
-    char *input = malloc(32);
-.
-    i = 0;
-    j = 0;
-    while (str[i] != 0 && i < 32)
-    {
-        input[j] = str[i];
-        i = i + 2;
-        j++;
-    }
-    return (input);
-}
+	int		i;
+	int		j;
+	char	*input;
 
+	*input = malloc(32);
+	i = 0;
+	j = 0;
+	while (str[i] != 0 && i < 32)
+	{
+		input[j] = str[i];
+		i = i + 2;
+		j++;
+	}
+	return (input);
+}
 
 int	check_error(char *str)
 {
 	int	i;
+
 	i = 0;
 	while (i < 16)
 	{
@@ -59,14 +59,12 @@ int	check_error(char *str)
 			return (0);
 		if (str[i] == '4' && str[i + 4] == '4')
 			return (0);
-
 		i++;
 		if (i == 3)
 			i = i + 5;
 	}
 	return (1);
 }
-
 /*
 	if (str[0] == 1 && str[4] == 1 || str[0] == 2 && str[4] == 4)
 	if (str[0] == 3 && str[4] == 3 || str[0] == 3 && str[4] == 4 || str[0] == 4 && str[4] == 4)
